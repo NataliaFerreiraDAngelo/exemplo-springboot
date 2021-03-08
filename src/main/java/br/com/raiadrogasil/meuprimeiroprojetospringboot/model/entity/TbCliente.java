@@ -1,9 +1,13 @@
 package br.com.raiadrogasil.meuprimeiroprojetospringboot.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 public class TbCliente {
 
     @Id
@@ -14,6 +18,7 @@ public class TbCliente {
     @Column(name = "NM_CLIENTE")
     private String nmCliente;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dtNascto;
 
     private Integer cdEmpresa;
@@ -23,5 +28,6 @@ public class TbCliente {
     private String nrRg;
 
     private Long cdCliente;
+
 
 }
